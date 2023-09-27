@@ -216,6 +216,25 @@ class AppPixivAPI(BasePixivAPI):
         )
         return await self.requests_(method=method, url=url, params=params, auth=req_auth)
 
+    async def user_bookmarks_novel(
+            self,
+            user_id: int,
+            restrict: str = 'public',
+            filter: str = 'for_ios',
+            max_bookmark_id: int = None,
+            tag: str = None,
+            req_auth: bool = True
+    ):
+        method, url = self.api.user_bookmarks_novel
+        params = self.set_params(
+            user_id=user_id,
+            filter=filter,
+            restrict=restrict,
+            max_bookmark_id=max_bookmark_id,
+            tag=tag
+        )
+        return await self.requests_(method=method, url=url, params=params, auth=req_auth)
+
     async def user_related(
             self,
             seed_user_id,

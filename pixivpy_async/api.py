@@ -27,6 +27,10 @@ class API:
         return 'GET', '%s/user/bookmarks/illust' % self.appv1
 
     @property
+    def user_bookmarks_novel(self):
+        return 'GET', '%s/user/bookmarks/novel' % self.appv1
+
+    @property
     def user_related(self):
         return 'GET', '%s/user/related' % self.appv1
 
